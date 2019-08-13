@@ -1,10 +1,8 @@
 '''
-
 현재 imgaug-doc-master의 bbox_jw를 통해 bounding box를 읽어오는 것까지!!
 폴더안에 choco songi  (인식시킬 object class name list로 변경)
 jpg이면 selected_jpg_list에 붙이고
 아니면 selected_extension_list에 붙이고
-
 '''
 
 import imageio
@@ -30,12 +28,14 @@ selected_jpg_list = []
 selected_extension_list = []
 #문자열순으로 list정렬되어서 1, 10, 11...19, 2, 20, 3, 4....
 file_list.sort()
+file_name_list = ['choco_songi', 'pringles onion']
 for i in file_list:
-    if('choco_songi' in i):
-        if('jpg' in i ):
-            selected_jpg_list.append(i)
-        else:
-            selected_extension_list.append(i)
+    for name in file_name_list:
+        if(name in i):
+            if('jpg' in i ):
+                selected_jpg_list.append(i)
+            else:
+                selected_extension_list.append(i)
 #path에 존재하는 파일 목록가져오기 - choco_songi에해당할
 bbox = []
 lines = []
